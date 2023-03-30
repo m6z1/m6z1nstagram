@@ -9,15 +9,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
 class LoginActivity : AppCompatActivity() {
-    private var auth: FirebaseAuth? = null
-    private val binding = ActivityLoginBinding.inflate(layoutInflater)
-    override fun setContentView(layoutResID: Int) {
-        (binding.root)
-    }
-
+    var auth: FirebaseAuth? = null
+    private lateinit var binding : ActivityLoginBinding //뷰 바인딩
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         auth = FirebaseAuth.getInstance()
         binding.SignupEmail.setOnClickListener {
             signinAndSignup()
