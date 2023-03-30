@@ -1,90 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LoginLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp">
 
-    <RelativeLayout android:id="@+id/LoginLayout"
+    <ImageView
+        android:id="@+id/LogoImg"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".LoginActivity"
-        android:layout_marginHorizontal="20dp">
+        android:layout_height="310dp"
+        android:src="@drawable/logo_title"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/logo_imageview"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:src="@drawable/logo_title" />
+    <EditText
+        android:id="@+id/PutEmail"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="@string/email"
+        app:layout_constraintTop_toBottomOf="@id/LogoImg" />
 
-        <LinearLayout
-            android:id="@+id/edittext_linearlayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/logo_imageview"
-            android:orientation="vertical">
+    <EditText
+        android:id="@+id/PutPasswd"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        android:hint="@string/password"
+        app:layout_constraintTop_toBottomOf="@id/PutEmail" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/SignupEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorEmailSignIn"
+        android:layout_marginTop="50dp"
+        android:text="@string/signin_email"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/PutPasswd"
+        app:layout_constraintBottom_toTopOf="@id/FindIdPasswd"/>
 
-                <EditText
-                    android:id="@+id/edittext_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/email" />
-            </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/FindIdPasswd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorEmailSignIn"
+        android:text="@string/find_id_password"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/FacebookLogin"
+        app:layout_constraintTop_toBottomOf="@id/SignupEmail" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/FacebookLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_signin_facebook"
+        android:text="@string/signin_facebook"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@id/GoogleLogin"
+        app:layout_constraintTop_toBottomOf="@id/FindIdPasswd" />
 
-                <EditText
-                    android:id="@+id/edittext_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/password" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/GoogleLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_signin_google"
+        android:text="@string/signin_google"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="@+id/LoginLayout"
+        app:layout_constraintTop_toBottomOf="@id/FacebookLogin" />
 
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_below="@+id/edittext_linearlayout"
-            android:layout_alignParentBottom="true"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/email_login_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/signin_email" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/find_id_password_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/find_id_password" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/facebook_login_button"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/btn_signin_facebook"
-                android:text="@string/signin_facebook"
-                android:textColor="@android:color/white" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/google_login_button"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/btn_signin_google"
-                android:text="@string/signin_google"
-                android:textColor="@android:color/white" />
-
-        </LinearLayout>
-
-    </RelativeLayout>
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>
