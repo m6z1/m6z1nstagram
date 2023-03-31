@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LoginLayout"
@@ -35,31 +34,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="24dp"
         android:background="@color/colorEmailSignIn"
         android:text="@string/signin_email"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/FindIdPasswd"
-        app:layout_constraintRight_toLeftOf="@+id/SignupEmail"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintRight_toLeftOf="@id/SignupEmail"
+        app:layout_constraintStart_toStartOf="@id/LoginLayout"
         app:layout_constraintTop_toBottomOf="@id/PutPasswd" />
 
     <Button
         android:id="@+id/SignupEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
         android:layout_marginTop="30dp"
         android:background="@color/colorEmailSignIn"
         android:text="@string/signup_email"
         android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/PutPasswd"
-        app:layout_constraintLeft_toRightOf="@+id/SigninEmail"
-        app:layout_constraintBottom_toTopOf="@id/FindIdPasswd">
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/SigninEmail"
+        app:layout_constraintEnd_toEndOf="@id/LoginLayout"
+        app:layout_constraintLeft_toRightOf="@id/SigninEmail"
+        app:layout_constraintTop_toBottomOf="@id/PutPasswd" />
 
     <Button
         android:id="@+id/FindIdPasswd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@color/colorEmailSignIn"
         android:text="@string/find_id_password"
         android:textColor="@color/black"
