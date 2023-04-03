@@ -37,7 +37,6 @@
         android:background="@color/colorEmailSignIn"
         android:text="@string/signin_email"
         android:textColor="@color/black"
-        android:layout_marginLeft="20dp"
         app:layout_constraintRight_toLeftOf="@id/SignupEmail"
         app:layout_constraintStart_toStartOf="@id/LoginLayout"
         app:layout_constraintTop_toBottomOf="@id/PutPasswd" />
@@ -50,11 +49,10 @@
         android:background="@color/colorEmailSignIn"
         android:text="@string/signup_email"
         android:textColor="@color/black"
-        android:layout_marginRight="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/SigninEmail"
         app:layout_constraintEnd_toEndOf="@id/LoginLayout"
         app:layout_constraintLeft_toRightOf="@id/SigninEmail"
-        app:layout_constraintTop_toBottomOf="@id/PutPasswd" />
+        app:layout_constraintTop_toBottomOf="@id/PutPasswd"/>
 
     <Button
         android:id="@+id/FindIdPasswd"
