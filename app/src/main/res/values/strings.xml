@@ -20,7 +20,7 @@
     <string name="signin_facebook">Facebook login</string>
     <string name="signup_complete">Membership success</string>
     <string name="signin_complete">Login success</string>
-    <string name="signout">Signout</string>
+<string name="signout">Signout</string>
     <string name="signout_success">Signout success</string>
     <string name="signout_fail">Signout fail</string>
     <string name="signout_fail_null">Please enter your email and password</string>
@@ -61,4 +61,12 @@
     <!-- etc -->
     <item name="visible" type="id" />
     <item name="masked" type="id" />
+    
+    <!--Signup-->
+    <string name="title">Signup Page</string>
+    <string name="put_name">name</string>
+    <string name="put_Email">Email(Id)</string>
+    <string name="put_passwd">Password</string>
+    <string name="check_passwd">Check Password</string>
+    <string name="corret_passwd">Correct Password!</string>
 </resources>
