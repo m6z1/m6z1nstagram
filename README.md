@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/114990782/228760239-c6593ea6-4d17-4289-a96d-1e829f1635a0.png)
 
-###기존 대비 입맛대로 바꾼 수정사항
-1. LoginActivity
-   a. RelativeLayout -> ConstraintLayout
+### 기존 대비 입맛대로 바꾼 수정사항
+1. LoginActivity<br>
+   a. RelativeLayout -> ConstraintLayout <br>
    b. Signup and signin 버튼 -> signin / signup (따로 분할)
