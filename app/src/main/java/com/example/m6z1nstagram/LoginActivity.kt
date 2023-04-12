@@ -18,11 +18,28 @@ class LoginActivity : AppCompatActivity() {
         setContentView(view)
         auth = FirebaseAuth.getInstance()
         binding.SignupEmail.setOnClickListener {
-            signinAndSignup()
+            signupbyEmail()
+        }
+        binding.SigninEmail.setOnClickListener {
+            signinbyEmail()
         }
     }
 
-    fun signinAndSignup() {
+    fun signinbyEmail() {
+        auth?.createUserWithEmailAndPassword(
+            binding.PutEmail.text.toString(),
+            binding.PutPasswd.text.toString()
+        )
+            ?.addOnCompleteListener { task ->
+                if(task.isSuccessful) {
+                    moveMainPage(task.result.user)
+                } else {
+                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
+                }
+            }
+    }
+
+    fun signupbyEmail() {
         auth?.createUserWithEmailAndPassword(
             binding.PutEmail.text.toString(),
             binding.PutPasswd.text.toString()
@@ -33,21 +50,7 @@ class LoginActivity : AppCompatActivity() {
                 } else if (task.exception?.message.isNullOrEmpty()) {
                     Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
                 } else {
-                    signinEmail()
-                }
-            }
-    }
-
-    fun signinEmail() {
-        auth?.createUserWithEmailAndPassword(
-            binding.PutEmail.text.toString(),
-            binding.PutPasswd.text.toString()
-        )
-            ?.addOnCompleteListener { task ->
-                if(task.isSuccessful) {
-                    moveMainPage(task.result.user)
-                } else {
-                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
+                    signupbyEmail()
                 }
             }
     }
