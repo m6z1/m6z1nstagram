@@ -65,8 +65,11 @@
     <!--Signup-->
     <string name="title">Signup Page</string>
     <string name="put_name">name</string>
+    <string name="name_hint">이름을 입력하세요</string>
     <string name="put_Email">Email(Id)</string>
+    <string name="email_hint">이메일을 입력하세요</string>
     <string name="put_passwd">Password</string>
+    <string name="passwd_hint">비밀번호를 입력하세요</string>
     <string name="check_passwd">Check Password</string>
-    <string name="corret_passwd">Correct Password!</string>
+    <string name="correct_passwd">Correct Password!</string>
 </resources>
