@@ -71,5 +71,7 @@
     <string name="put_passwd">Password</string>
     <string name="passwd_hint">비밀번호를 입력하세요</string>
     <string name="check_passwd">Check Password</string>
+    <string name="check_passwd_hint">비밀번호를 한 번 더 입력하세요</string>
     <string name="correct_passwd">Correct Password!</string>
+    <string name="btn_signup">회원가입 완료</string>
 </resources>
