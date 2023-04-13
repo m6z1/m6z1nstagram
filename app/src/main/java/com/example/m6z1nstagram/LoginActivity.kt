@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseUser
 
 class LoginActivity : AppCompatActivity() {
     var auth: FirebaseAuth? = null
-    private lateinit var binding : ActivityLoginBinding //뷰 바인딩
+    private lateinit var binding : ActivityLoginBinding//뷰 바인딩
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -40,19 +40,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun signupbyEmail() {
-        auth?.createUserWithEmailAndPassword(
-            binding.PutEmail.text.toString(),
-            binding.PutPasswd.text.toString()
+        startActivity(
+            Intent (this, SignupActivity::class.java)
         )
-            ?.addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    moveMainPage(task.result.user)
-                } else if (task.exception?.message.isNullOrEmpty()) {
-                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
-                } else {
-                    signupbyEmail()
-                }
-            }
     }
 
     fun moveMainPage(user: FirebaseUser?) {
