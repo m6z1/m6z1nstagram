@@ -36,6 +36,8 @@ class SignupActivity : AppCompatActivity() {
                         Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
                     }
                 }
+        } else {
+            Toast.makeText(this, "비밀번호가 달라요", Toast.LENGTH_LONG).show()
         }
 
     }
