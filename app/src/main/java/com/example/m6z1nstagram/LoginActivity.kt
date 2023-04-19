@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.m6z1nstagram.databinding.ActivityLoginBinding
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
 class LoginActivity : AppCompatActivity() {
     var auth: FirebaseAuth? = null
     private lateinit var binding : ActivityLoginBinding//뷰 바인딩
+    var googleSignInClient: GoogleSignInClient? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -23,6 +25,12 @@ class LoginActivity : AppCompatActivity() {
         binding.SigninEmail.setOnClickListener {
             signinbyEmail()
         }
+        binding.GoogleLogin.setOnClickListener {
+            googleSign()
+        }
+    }
+
+    private fun googleSign() {
     }
 
     fun signinbyEmail() {
