@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.m6z1nstagram.databinding.ActivityLoginBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
@@ -13,6 +15,7 @@ class LoginActivity : AppCompatActivity() {
     var auth: FirebaseAuth? = null
     private lateinit var binding : ActivityLoginBinding//뷰 바인딩
     var googleSignInClient: GoogleSignInClient? = null
+    var GOOGLE_LOGIN_CODE = 7354
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -26,11 +29,22 @@ class LoginActivity : AppCompatActivity() {
             signinbyEmail()
         }
         binding.GoogleLogin.setOnClickListener {
-            googleSign()
+            googleLogin()
         }
+        var gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken("867648276666-adv2d30biskk0s20s4rj3fqhlru6a89d.apps.googleusercontent.com")
+            .requestEmail()
+            .build()
+        googleSignInClient = GoogleSignIn.getClient(this,gso)
     }
 
-    private fun googleSign() {
+    private fun googleLogin() {
+        var signInIntent = googleSignInClient?.signInIntent
+        startActivityForResult(signInIntent, GOOGLE_LOGIN_CODE)
+    }
+
+    private fun startActivityForResult(signInIntent: Intent?, googleLoginCode: Int) {
+        TODO("Not yet implemented")
     }
 
     fun signinbyEmail() {
